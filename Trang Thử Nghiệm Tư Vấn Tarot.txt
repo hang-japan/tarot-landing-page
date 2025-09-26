@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khám Phá Bản Thân Cùng Tarot - Dự Án Nghiên Cứu</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(to bottom, #d6b8c9, #e0c8d1, #ebc0c7);
+            color: #333;
+            background-attachment: fixed;
+        }
+        .playfair {
+            font-family: 'Playfair Display', serif;
+        }
+        .card {
+            background-color: rgba(255, 255, 255, 0.5);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .btn {
+            background-color: #8c6a96;
+            color: white;
+            transition: all 0.3s ease;
+        }
+        .btn:hover {
+            background-color: #7a5e84;
+            transform: translateY(-2px);
+        }
+        input, select, textarea {
+            background-color: rgba(255, 255, 255, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            color: #333;
+        }
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: #8c6a96;
+            box-shadow: 0 0 0 2px rgba(140, 106, 150, 0.5);
+        }
+        .tarot-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><radialGradient id="grad1" cx="50%" cy="50%" r="50%"><stop offset="0%" style="stop-color:rgb(255,255,255);stop-opacity:0.2" /><stop offset="100%" style="stop-color:rgb(255,255,255);stop-opacity:0" /></radialGradient></defs><g fill-opacity="0.3"><circle cx="20" cy="20" r="15" fill="url(#grad1)"/><circle cx="80" cy="80" r="15" fill="url(#grad1)"/><circle cx="50" cy="50" r="15" fill="url(#grad1)"/><path d="M50 0L61.8 38.2L100 50L61.8 61.8L50 100L38.2 61.8L0 50L38.2 38.2L50 0Z" fill="%23FFFFFF"/><path d="M50 20L58.5 45L85 50L58.5 55L50 80L41.5 55L15 50L41.5 45L50 20Z" fill="%23FFFFFF"/></g></svg>');
+            background-size: 200px;
+            opacity: 0.1;
+            pointer-events: none;
+            z-index: -1;
+        }
+        .sun-moon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            opacity: 0.3;
+            pointer-events: none;
+            z-index: -1;
+        }
+    </style>
+</head>
+<body class="p-6 md:p-12 relative">
+    <div class="tarot-pattern"></div>
+    <div class="sun-moon">
+        <!-- Sun and Moon SVG from uploaded image -->
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600">
+            <defs>
+                <linearGradient id="sunGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" style="stop-color:#fdb813;stop-opacity:1" />
+                    <stop offset="100%" style="stop-color:#f69d3c;stop-opacity:1" />
+                </linearGradient>
+                <linearGradient id="moonGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" style="stop-color:#b0c4de;stop-opacity:1" />
+                    <stop offset="100%" style="stop-color:#a2b2c8;stop-opacity:1" />
+                </linearGradient>
+            </defs>
+            <circle cx="300" cy="300" r="280" fill="rgba(255, 255, 255, 0.2)"/>
+            <path d="M300,50 C438.07,50 550,161.93 550,300 C550,438.07 438.07,550 300,550 C161.93,550 50,438.07 50,300 C50,161.93 161.93,50 300,50 Z" fill="url(#sunGradient)"/>
+            <path d="M300,50 C438.07,50 550,161.93 550,300 C550,438.07 438.07,550 300,550 C234.46,550 174.65,523.63 131.84,479.52 C181.71,438.16 215,372.43 215,300 C215,227.57 181.71,161.84 131.84,120.48 C174.65,76.37 234.46,50 300,50 Z" fill="url(#moonGradient)"/>
+        </svg>
+    </div>
+    
+    <div class="max-w-4xl mx-auto space-y-12 relative z-10">
+        <header class="text-center">
+            <h1 class="text-3xl md:text-5xl font-bold playfair text-[#5c3e62] mb-2">Khám Phá Bản Thân Cùng Tarot</h1>
+            <p class="text-md md:text-lg text-[#7c7c8a]">Tư vấn trực tuyến - Dành cho dự án nghiên cứu thị trường</p>
+        </header>
+        
+        <main class="space-y-12">
+            <section class="card rounded-2xl p-6 md:p-8">
+                <h2 class="text-xl md:text-2xl font-semibold playfair mb-4 text-[#5c3e62]">Tại Sao Nên Trải Nghiệm Dịch Vụ Của Chúng Tôi?</h2>
+                <div class="space-y-4">
+                    <p class="text-[#333]">
+                        Bạn đang tìm kiếm sự rõ ràng trong sự nghiệp, tình cảm hay cuộc sống? Tarot không phải là bói toán, mà là một công cụ mạnh mẽ giúp bạn kết nối với trực giác của mình. Bằng cách khám phá các biểu tượng và câu chuyện ẩn chứa trong từng lá bài, bạn sẽ có cái nhìn sâu sắc hơn về vấn đề của mình và tìm ra hướng đi mới.
+                    </p>
+                    <p class="text-[#333]">
+                        Dịch vụ này được xây dựng như một phần của dự án nghiên cứu để tìm hiểu nhu cầu thực sự của khách hàng đối với dịch vụ tư vấn tarot trực tuyến.
+                    </p>
+                </div>
+            </section>
+            
+            <section class="card rounded-2xl p-6 md:p-8">
+                <h2 class="text-xl md:text-2xl font-semibold playfair mb-2 text-[#5c3e62] text-center">Các Gói Tư Vấn</h2>
+                <p class="text-md md:text-lg text-center mb-6 text-[#7c7c8a]">Để thực hiện trải bài bạn hãy lựa chọn một gói tarot phù hợp với bản thân nhất nhé !</p>
+                <div id="service-packages" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
+                    <!-- Gói 1: Gói Câu hỏi Chuyên sâu -->
+                    <div class="package-card border-2 border-transparent hover:border-[#8c6a96] rounded-xl p-4 transition-all duration-300 cursor-pointer" data-package-name="Câu hỏi chuyên sâu" data-price="200,000" data-duration="15">
+                        <h3 class="font-bold text-lg text-center mb-2 text-[#5c3e62]">Gói câu hỏi chuyên sâu</h3>
+                        <p class="text-2xl font-bold text-center text-[#d1b399] mb-4">200,000 VND</p>
+                        <ul class="text-[#333] space-y-2">
+                            <li class="flex items-center"><svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="color: #8c6a96;"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Tư vấn 6 câu hỏi về một chủ đề</li>
+                            <li class="flex items-center"><svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="color: #8c6a96;"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Khám phá sâu các khía cạnh liên quan</li>
+                            <li class="flex items-center"><svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="color: #8c6a96;"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Mở rộng tầm nhìn, đưa ra giải pháp</li>
+                        </ul>
+                        <div class="mt-4">
+                            <h4 class="font-semibold text-[#5c3e62] mb-2">Các chủ đề phổ biến:</h4>
+                            <ul class="text-[#333] list-disc list-inside">
+                                <li>Công việc và tiền bạc</li>
+                                <li>Học tập và thi cử</li>
+                                <li>Tình yêu và các mối quan hệ</li>
+                                <li>Tổng quan và khám phá bản thân</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!-- Gói 2: Gói Câu hỏi Lẻ -->
+                    <div class="package-card border-2 border-transparent hover:border-[#8c6a96] rounded-xl p-4 transition-all duration-300 cursor-pointer" data-package-name="Câu hỏi lẻ" data-price="40,000" data-duration="15">
+                        <h3 class="font-bold text-lg text-center mb-2 text-[#5c3e62]">Gói câu hỏi lẻ</h3>
+                        <p class="text-2xl font-bold text-center text-[#d1b399] mb-4">40,000 VND/câu</p>
+                        <ul class="text-[#333] space-y-2">
+                            <li class="flex items-center"><svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="color: #8c6a96;"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Giải đáp một thắc mắc duy nhất</li>
+                            <li class="flex items-center"><svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="color: #8c6a96;"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Đưa ra gợi ý, lời khuyên nhanh gọn</li>
+                            <li class="flex items-center"><svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="color: #8c6a96;"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Giải pháp cho vấn đề cụ thể</li>
+                        </ul>
+                        <div class="mt-4">
+                            <h4 class="font-semibold text-[#5c3e62] mb-2">Gợi ý một số câu hỏi:</h4>
+                            <ul class="text-[#333] list-disc list-inside">
+                                <li>Tôi có nên nhận công việc mới này không?</li>
+                                <li>Mối quan hệ này có tiến triển không?</li>
+                                <li>Tình hình học tập của tôi có tốt không?</li>
+                                <li>Tôi nên làm gì để cải thiện sức khỏe?</li>
+                                <li>Tôi nên chọn ngành học nào?</li>
+                                <li>Sắp tới tôi có thuận lợi trong sự nghiệp không?</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="card rounded-2xl p-6 md:p-8" id="booking-form">
+                <h2 class="text-xl md:text-2xl font-semibold playfair mb-2 text-[#5c3e62] text-center">Đăng Ký Tư Vấn</h2>
+                <p class="text-center text-sm mb-6 text-[#7c7c8a] font-semibold">Hãy liên hệ với chúng mình bằng các nhập các thông tin vào form này</p>
+                <form id="tarot-form" class="space-y-6">
+                    <div>
+                        <label for="name" class="block text-sm font-medium mb-2 text-[#5c3e62]">Họ và Tên <span class="text-red-500">*</span></label>
+                        <input type="text" id="name" name="name" required class="w-full rounded-md p-3">
+                    </div>
+                    <div>
+                        <label for="email" class="block text-sm font-medium mb-2 text-[#5c3e62]">Email <span class="text-red-500">*</span></label>
+                        <input type="email" id="email" name="email" required class="w-full rounded-md p-3">
+                    </div>
+                    <div>
+                        <label for="topic" class="block text-sm font-medium mb-2 text-[#5c3e62]">Bạn muốn hỏi về vấn đề gì? <span class="text-red-500">*</span></label>
+                        <select id="topic" name="topic" required class="w-full rounded-md p-3">
+                            <option value="">Chọn một lĩnh vực</option>
+                            <option value="Công việc và tiền bạc">Công việc và tiền bạc</option>
+                            <option value="Học tập và thi cử">Học tập và thi cử</option>
+                            <option value="Tình yêu và các mối quan hệ">Tình yêu và các mối quan hệ</option>
+                            <option value="Tổng quan và khám phá bản thân">Tổng quan và khám phá bản thân</option>
+                            <option value="Khác">Khác</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="questions" class="block text-sm font-medium mb-2 text-[#5c3e62]">Mô tả câu hỏi chi tiết của bạn (tùy chọn)</label>
+                        <textarea id="questions" name="questions" rows="4" class="w-full rounded-md p-3"></textarea>
+                    </div>
+                    
+                    <div id="selected-package" class="hidden">
+                        <p class="text-sm text-[#7c7c8a]">Gói đã chọn:</p>
+                        <p class="text-[#5c3e62] text-lg font-bold">Gói <span id="package-name"></span> - <span id="package-duration"></span> phút - <span id="package-price"></span> VND</p>
+                        <input type="hidden" id="selected-duration" name="selected-duration">
+                        <input type="hidden" id="selected-price" name="selected-price">
+                        <input type="hidden" id="selected-package-name" name="selected-package-name">
+                    </div>
+
+                    <button type="submit" class="w-full btn rounded-lg py-3 font-semibold text-lg">Đăng Ký Tư Vấn</button>
+                    
+                    <div id="confirmation-message" class="hidden mt-4 text-center p-4 rounded-md bg-green-500 text-white">
+                        <p class="font-semibold">Cảm ơn bạn đã đăng ký!</p>
+                        <p>Thông tin của bạn đã được ghi nhận cho mục đích nghiên cứu. Chúng tôi sẽ liên hệ lại với bạn trong tương lai.</p>
+                    </div>
+                </form>
+            </section>
+        </main>
+        
+        <footer class="text-center text-sm text-[#7c7c8a] mt-12">
+            Đây là một dự án nghiên cứu. Mọi thông tin cá nhân sẽ được bảo mật và chỉ sử dụng cho mục đích phân tích thị trường.
+        </footer>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const packageCards = document.querySelectorAll('.package-card');
+            const form = document.getElementById('tarot-form');
+            const selectedPackageSection = document.getElementById('selected-package');
+            const packageName = document.getElementById('package-name');
+            const packageDuration = document.getElementById('package-duration');
+            const packagePrice = document.getElementById('package-price');
+            const selectedDurationInput = document.getElementById('selected-duration');
+            const selectedPriceInput = document.getElementById('selected-price');
+            const selectedPackageNameInput = document.getElementById('selected-package-name');
+            const confirmationMessage = document.getElementById('confirmation-message');
+
+            packageCards.forEach(card => {
+                card.addEventListener('click', () => {
+                    packageCards.forEach(c => c.classList.remove('border-[#8c6a96]'));
+                    card.classList.add('border-[#8c6a96]');
+
+                    const name = card.getAttribute('data-package-name');
+                    const price = card.getAttribute('data-price');
+                    const duration = card.getAttribute('data-duration');
+
+                    packageName.textContent = name;
+                    packageDuration.textContent = duration;
+                    packagePrice.textContent = price;
+                    selectedPackageNameInput.value = name;
+                    selectedDurationInput.value = duration;
+                    selectedPriceInput.value = price;
+                    selectedPackageSection.classList.remove('hidden');
+                });
+            });
+
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+
+                const formData = new FormData(form);
+                const data = Object.fromEntries(formData.entries());
+
+                console.log("Dữ liệu đăng ký:", data);
+                
+                form.reset();
+                selectedPackageSection.classList.add('hidden');
+                confirmationMessage.classList.remove('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
